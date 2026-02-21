@@ -1,0 +1,44 @@
+:root {
+    /* Typography */
+    --font-brand: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+    /* Surfaces (cool paper) */
+    --color-paper: #f8fafc;
+    /* slate-50 */
+    --color-panel: #f1f5f9;
+    /* slate-100 */
+    --color-surface: rgba(255, 255, 255, 0.72);
+    /* glass */
+
+    /* Ink (cool neutral) */
+    --color-ink: #0f172a;
+    /* slate-900 */
+    --color-ink-muted: #334155;
+    /* slate-700 */
+    --color-ink-subtle: #64748b;
+    /* slate-500 */
+
+    /* Borders (slate-300) */
+    --color-border: rgba(202, 213, 226, 1);
+    /* slate-400 @ alpha */
+    --color-border-soft: rgba(148, 163, 184, 0.28);
+
+    /* Primary (light blue-gray) */
+    --color-primary: #e2e8f0;
+    /* slate-200 */
+    --color-primary-hover: #cbd5e1;
+    /* slate-300 */
+
+    /* On colors */
+    --color-on-primary: #334155;
+    /* slate-700 */
+
+    /* Effects */
+    --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.06);
+    --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.08);
+
+    /* Radius */
+    --radius-xl: 1.25rem;
+    --radius-2xl: 1.5rem;
+    --radius-3xl: 1.75rem;
+}
