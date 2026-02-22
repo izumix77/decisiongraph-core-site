@@ -13,7 +13,13 @@ export const metadata = {
   description:
     "A deterministic kernel for recording, traversing, and replaying human decisions.",
   openGraph: {
-    images: ["/og"],
+    images: [
+      {
+        url: "/og.png", // 静的フォールバック
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
