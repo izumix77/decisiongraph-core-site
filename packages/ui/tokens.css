@@ -1,6 +1,6 @@
 :root {
     /* Typography */
-    --font-brand: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-brand: PTSerif;
 
     /* Surfaces (cool paper) */
     --color-paper: #f8fafc;
