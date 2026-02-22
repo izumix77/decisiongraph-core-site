@@ -34,23 +34,28 @@ export async function GET(req: Request) {
         style={{
           display: "flex",
           alignItems: "center",
-          gap: 16,
-          marginBottom: 40,
+          marginBottom: 60,
         }}
       >
         <div
           style={{
-            width: 20,
-            height: 20,
+            width: 40,
+            height: 40,
             borderRadius: "50%",
             background: "#94a3b8",
           }}
         />
-        <div style={{ width: 80, height: 2, background: "#94a3b8" }} />
         <div
           style={{
-            width: 20,
-            height: 20,
+            width: 200,
+            height: 6,
+            background: "#94a3b8",
+          }}
+        />
+        <div
+          style={{
+            width: 40,
+            height: 40,
             borderRadius: "50%",
             background: "#94a3b8",
           }}
