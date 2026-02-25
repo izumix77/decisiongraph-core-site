@@ -19,7 +19,7 @@ export function TopNav({
     },
     {
       label: "Kernel API",
-      href: "https://github.com/izumix77/decisiongraph-core/blob/main/DecisionGraph%20Core%20%E2%80%94%20Minimal%20Kernel%20API%20v0.2(%E5%B7%AE%E3%81%97%E6%9B%BF%E3%81%88%E7%89%88).md",
+      href: "https://github.com/izumix77/decisiongraph-core/blob/main/docs/constitution/v0.2/Minimal_Kernel_API.md",
     },
     {
       label: "Schema",
@@ -57,6 +57,15 @@ export function TopNav({
         </div>
 
         <nav className="hidden items-center gap-4 md:flex">
+          {/* 🔹 Internal Releases link */}
+          <Link
+            href="/releases"
+            className="text-sm text-(--color-ink-subtle) hover:text-(--color-ink)"
+          >
+            Releases
+          </Link>
+
+          {/* 🔹 Existing external links */}
           {navItems.map((item) => (
             <a
               key={item.label}

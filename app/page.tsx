@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TopNav } from "./_components/TopNav";
 import { Footer } from "./_components/Footer";
 import { Brand } from "@ui/Brand";
@@ -30,14 +31,28 @@ export default function Page() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Button>
-              <a href="https://github.com/izumix77/decisiongraph-core">
+              <a
+                href="https://github.com/izumix77/decisiongraph-core"
+                target="_blank"
+                rel="noreferrer"
+              >
                 View on GitHub
               </a>
             </Button>
+
             <Button variant="secondary">
-              <a href="https://github.com/izumix77/decisiongraph-core/tree/main/docs/constitution">
+              <a
+                href="https://github.com/izumix77/decisiongraph-core/tree/main/docs/constitution"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Read the Constitution
               </a>
+            </Button>
+
+            {/* 🔹 NEW: Release notes button */}
+            <Button variant="secondary">
+              <Link href="/releases">Release notes</Link>
             </Button>
           </div>
         </section>
@@ -61,6 +76,24 @@ export default function Page() {
               Reconstruct graph state as-of a boundary (commitId / timestamp)
               deterministically.
             </p>
+          </Card>
+        </section>
+
+        {/* 🔹 NEW: Latest Release Section */}
+        <section className="mx-auto max-w-5xl px-6 pb-20">
+          <Card title="Latest release">
+            <p className="text-sm text-[color:var(--color-ink-subtle)]">
+              v0.2.0 is now published on npm. Constitutional invariants have
+              been hardened and immutability rules clarified.
+            </p>
+
+            <div className="mt-6">
+              <Button variant="secondary">
+                <Link href="/releases">
+                  Read v0.2.0 release notes
+                </Link>
+              </Button>
+            </div>
           </Card>
         </section>
       </main>
