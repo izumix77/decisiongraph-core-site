@@ -1,10 +1,11 @@
 ﻿const repo = "decisiongraph-core-site";
+const isProd = process.env.NODE_ENV === "production";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: `/${repo}`,
-  assetPrefix: `/${repo}/`,
+  basePath: isProd ? `/${repo}` : "",
+  assetPrefix: isProd ? `/${repo}/` : "",
   trailingSlash: true,
   images: { unoptimized: true },
 };

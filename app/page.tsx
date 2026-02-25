@@ -79,6 +79,41 @@ export default function Page() {
           </Card>
         </section>
 
+        {/* 🔹 NEW: CI Validation Section */}
+        <section className="mx-auto max-w-5xl px-6 pb-20">
+          <Card title="Deterministic validation in CI">
+            <p className="text-sm text-[color:var(--color-ink-subtle)]">
+              DecisionGraph Core validates the structure of decisions — not just
+              code. If a decision depends on a superseded assumption, CI fails
+              deterministically.
+            </p>
+
+            <div className="mt-6 rounded-xl border border-[color:var(--color-border)] bg-white/70 p-4 backdrop-blur">
+              <pre className="overflow-x-auto text-xs leading-6">
+                <code>{`$ decisiongraph validate ./decisions
+
+✖ ERROR: Dependency on Superseded Decision
+
+ADR-2026-005
+ └─ depends_on → ADR-2024-012
+      └─ status: Superseded
+
+Result: FAILED`}</code>
+              </pre>
+            </div>
+
+            <p className="mt-4 text-sm text-[color:var(--color-ink-muted)]">
+              The code did not change. The assumption did.
+            </p>
+
+            <div className="mt-6">
+              <Button variant="secondary">
+                <Link href="/docs/quickstart">View Quickstart</Link>
+              </Button>
+            </div>
+          </Card>
+        </section>
+
         {/* 🔹 NEW: Latest Release Section */}
         <section className="mx-auto max-w-5xl px-6 pb-20">
           <Card title="Latest release">
@@ -89,9 +124,7 @@ export default function Page() {
 
             <div className="mt-6">
               <Button variant="secondary">
-                <Link href="/releases">
-                  Read v0.2.0 release notes
-                </Link>
+                <Link href="/releases">Read v0.2.0 release notes</Link>
               </Button>
             </div>
           </Card>
