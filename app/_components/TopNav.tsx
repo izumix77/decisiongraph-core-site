@@ -35,8 +35,8 @@ export function TopNav({
     href: "https://github.com/izumix77/decisiongraph-core",
   },
   secondaryCta = {
-    label: "Discussions",
-    href: "https://github.com/izumix77/decisiongraph-core/discussions",
+    label: "npm",
+    href: "https://www.npmjs.com/package/@decisiongraph/core",
   },
 }: {
   tagline?: string;
