@@ -122,15 +122,19 @@ Result: FAILED`}</code>
         <section className="mx-auto max-w-5xl px-6 pb-20">
           <Card title="Latest release">
             <p className="text-sm text-[color:var(--color-ink-subtle)]">
-              v0.3.1 introduces GraphStore as the top-level container,
-              cross-graph edge validation, and the{" "}
-              <code className="text-[color:var(--color-ink)]">traverse</code>{" "}
-              CLI command with violation tree display.
+              v0.4.1 adds{" "}
+              <code className="text-[color:var(--color-ink)]">
+                DEPENDENCY_ON_DEPRECATED
+              </code>{" "}
+              detection (WARN) and the{" "}
+              <code className="text-[color:var(--color-ink)]">--strict</code>{" "}
+              flag to treat warnings as errors. All four packages are now
+              published on npm.
             </p>
 
             <div className="mt-6">
               <Button variant="secondary">
-                <Link href="/releases">Read v0.3.1 release notes</Link>
+                <Link href="/releases">Read release notes</Link>
               </Button>
             </div>
           </Card>

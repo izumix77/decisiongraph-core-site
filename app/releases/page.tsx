@@ -38,6 +38,74 @@ export default function ReleasesPage() {
         </section>
 
         <section className="mx-auto max-w-5xl px-6 pb-20">
+          <Card title="v0.4.1 — DEPENDENCY_ON_DEPRECATED + --strict flag">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[color:var(--color-ink-subtle)]">
+              <span>Release date: 2026-03-01</span>
+              <span>Packages: @decisiongraph/core, @decisiongraph/cli</span>
+              <span>Type: Minor</span>
+            </div>
+
+            <SectionTitle>What changed</SectionTitle>
+            <p className="mt-2 text-sm text-[color:var(--color-ink-subtle)]">
+              v0.4.1 completes the two-tier violation model defined in
+              Constitution Section 6. All four packages are now published on
+              npm.
+            </p>
+
+            <SectionTitle>Added</SectionTitle>
+            <ul className="mt-3 list-disc pl-5 text-sm text-[color:var(--color-ink-subtle)]">
+              <li>
+                <code>DEPENDENCY_ON_DEPRECATED</code> — WARN severity when a{" "}
+                <code>depends_on</code> target is <code>Deprecated</code>.
+                Signals that migration is needed before the target is
+                superseded.
+              </li>
+              <li>
+                CLI <code>--strict</code> flag — treat WARN as ERROR. Useful for
+                pre-release CI gates.
+              </li>
+              <li>
+                <code>@decisiongraph/cli@0.1.0</code> — initial npm publish.
+              </li>
+            </ul>
+
+            <SectionTitle>Violation severity model</SectionTitle>
+            <ul className="mt-3 list-disc pl-5 text-sm text-[color:var(--color-ink-subtle)]">
+              <li>
+                <code>DEPENDENCY_ON_SUPERSEDED</code> → ERROR — CI fails.
+                Dependency is already invalid.
+              </li>
+              <li>
+                <code>DEPENDENCY_ON_DEPRECATED</code> → WARN — CI passes.
+                Dependency is still valid but should be migrated.
+              </li>
+              <li>
+                <code>--strict</code> — promotes all WARNs to ERROR.
+              </li>
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button>
+                <a
+                  href="https://www.npmjs.com/package/@decisiongraph/core"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View on npm
+                </a>
+              </Button>
+              <Button variant="secondary">
+                <a
+                  href="https://github.com/izumix77/decisiongraph-core"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View on GitHub
+                </a>
+              </Button>
+            </div>
+          </Card>
+
+          <div className="mt-6"></div>
           <Card title="v0.3.1 — Multi-graph kernel + traverse CLI">
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[color:var(--color-ink-subtle)]">
               <span>Release date: 2026-02-28</span>
@@ -153,50 +221,50 @@ export default function ReleasesPage() {
 
           <div className="mt-6">
             <Card title="v0.2.0 — Constitutional tightening">
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[color:var(--color-ink-subtle)]">
-                  <span>Release date: 2026-02-24</span>
-                  <span>Package: @decisiongraph/core</span>
-                  <span>Type: Breaking</span>
-                </div>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[color:var(--color-ink-subtle)]">
+                <span>Release date: 2026-02-24</span>
+                <span>Package: @decisiongraph/core</span>
+                <span>Type: Breaking</span>
+              </div>
 
-                <SectionTitle>What changed</SectionTitle>
-                <p className="mt-2 text-sm text-[color:var(--color-ink-subtle)]">
-                  v0.2 formalizes and enforces constitutional invariants. This
-                  release moves DecisionGraph Core from a conceptual prototype
-                  to a structurally enforceable kernel boundary.
-                </p>
+              <SectionTitle>What changed</SectionTitle>
+              <p className="mt-2 text-sm text-[color:var(--color-ink-subtle)]">
+                v0.2 formalizes and enforces constitutional invariants. This
+                release moves DecisionGraph Core from a conceptual prototype to
+                a structurally enforceable kernel boundary.
+              </p>
 
-                <SectionTitle>Breaking changes</SectionTitle>
-                <ul className="mt-3 list-disc pl-5 text-sm text-[color:var(--color-ink-subtle)]">
-                  <li>Edge IDs are required.</li>
-                  <li>Edge status is required.</li>
-                  <li>Author is required on all nodes and edges.</li>
-                  <li>
-                    Replace <code>remove_edge</code> with{" "}
-                    <code>supersede_edge</code>.
-                  </li>
-                  <li>Unified status vocabulary and state model clarified.</li>
-                  <li>Commit immutability enforcement hardened.</li>
-                </ul>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <Button>
-                    <a
-                      href="https://www.npmjs.com/package/@decisiongraph/core"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      View on npm
-                    </a>
-                  </Button>
-                  <Button variant="secondary">
-                    <a
-                      href="https://github.com/izumix77/decisiongraph-core"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      View on GitHub
-                    </a>
-                  </Button>
+              <SectionTitle>Breaking changes</SectionTitle>
+              <ul className="mt-3 list-disc pl-5 text-sm text-[color:var(--color-ink-subtle)]">
+                <li>Edge IDs are required.</li>
+                <li>Edge status is required.</li>
+                <li>Author is required on all nodes and edges.</li>
+                <li>
+                  Replace <code>remove_edge</code> with{" "}
+                  <code>supersede_edge</code>.
+                </li>
+                <li>Unified status vocabulary and state model clarified.</li>
+                <li>Commit immutability enforcement hardened.</li>
+              </ul>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button>
+                  <a
+                    href="https://www.npmjs.com/package/@decisiongraph/core"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View on npm
+                  </a>
+                </Button>
+                <Button variant="secondary">
+                  <a
+                    href="https://github.com/izumix77/decisiongraph-core"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View on GitHub
+                  </a>
+                </Button>
               </div>
             </Card>
           </div>
