@@ -15,7 +15,7 @@ export default function Page() {
           <div className="flex items-center gap-3">
             <Brand>DecisionGraph Core</Brand>
             <span className="text-xs text-[color:var(--color-ink-subtle)]">
-              v0.2
+              v0.3
             </span>
           </div>
 
