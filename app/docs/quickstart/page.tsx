@@ -29,7 +29,6 @@ export default function QuickstartPage() {
                 the kernel is real.
               </p>
             </div>
-
           </div>
         </section>
 
@@ -37,9 +36,12 @@ export default function QuickstartPage() {
           <Card title="1) Install">
             <div className="mt-4 rounded-xl border border-[color:var(--color-border)] bg-white/70 p-4 backdrop-blur">
               <pre className="overflow-x-auto text-xs leading-6 text-[color:var(--color-ink)]">
-                <code>{`npm i @decisiongraph/core`}</code>
+                <code>{`npm i @decisiongraph/core @decisiongraph/cli`}</code>
               </pre>
             </div>
+            <p className="mt-2 text-xs text-[color:var(--color-ink-subtle)]">
+              Note: <code>@decisiongraph/cli</code> will be published shortly.
+            </p>
           </Card>
         </section>
 
@@ -56,7 +58,8 @@ export default function QuickstartPage() {
             <div className="mt-4 rounded-xl border border-[color:var(--color-border)] bg-white/70 p-4 backdrop-blur">
               <pre className="overflow-x-auto text-xs leading-6 text-[color:var(--color-ink)]">
                 <code>{`{
-  "version": "0.2",
+  "version": "0.3",
+  "graphId": "G:example",
   "ops": [
     {
       "type": "add_node",
@@ -87,13 +90,12 @@ export default function QuickstartPage() {
         <section className="mx-auto max-w-5xl px-6 pb-6">
           <Card title="3) Validate (local / CI)">
             <p className="text-sm text-[color:var(--color-ink-subtle)]">
-              Minimal pattern: read logs → replay → lint → exit non-zero on
-              ERROR.
+              Run traverse to replay all decision logs and detect violations.
             </p>
 
             <div className="mt-4 rounded-xl border border-[color:var(--color-border)] bg-white/70 p-4 backdrop-blur">
               <pre className="overflow-x-auto text-xs leading-6 text-[color:var(--color-ink)]">
-                <code>{`node scripts/validate-decisions.mjs`}</code>
+                <code>{`npx decisiongraph traverse ./decisions`}</code>
               </pre>
             </div>
 
@@ -113,7 +115,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: node scripts/validate-decisions.mjs`}</code>
+      - run: npx decisiongraph traverse ./decisions`}</code>
               </pre>
             </div>
           </Card>
@@ -126,6 +128,9 @@ jobs:
               <li>Replay is first-class.</li>
               <li>
                 After commit, graphs are append-only (changes via supersession).
+              </li>
+              <li>
+                Cross-graph dependencies are validated across the entire GraphStore.
               </li>
             </ul>
           </Card>
