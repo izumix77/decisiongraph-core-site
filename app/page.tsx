@@ -90,13 +90,17 @@ export default function Page() {
 
             <div className="mt-6 rounded-xl border border-[color:var(--color-border)] bg-white/70 p-4 backdrop-blur">
               <pre className="overflow-x-auto text-xs leading-6">
-                <code>{`$ decisiongraph validate ./decisions
+                <code>{`$ decisiongraph traverse ./decisions
 
-✖ ERROR: Dependency on Superseded Decision
+  ✔ [01-security-policy.decisionlog.json]
+  ✔ [02-adr-auth.decisionlog.json]
+  ✖ [03-adr-depends-on-old.decisionlog.json]
 
-ADR-2026-005
- └─ depends_on → ADR-2024-012
-      └─ status: Superseded
+✖ ERROR: depends_on target 'N:auth-v1' is Superseded
+  at graphs.G:adr.edges.E:adr-001.to
+
+  N:adr-001  Use new auth system
+        └─ depends_on → N:auth-v1  Old auth decision (superseded)
 
 Result: FAILED`}</code>
               </pre>
@@ -118,13 +122,15 @@ Result: FAILED`}</code>
         <section className="mx-auto max-w-5xl px-6 pb-20">
           <Card title="Latest release">
             <p className="text-sm text-[color:var(--color-ink-subtle)]">
-              v0.2.0 is now published on npm. Constitutional invariants have
-              been hardened and immutability rules clarified.
+              v0.3.1 introduces GraphStore as the top-level container,
+              cross-graph edge validation, and the{" "}
+              <code className="text-[color:var(--color-ink)]">traverse</code>{" "}
+              CLI command with violation tree display.
             </p>
 
             <div className="mt-6">
               <Button variant="secondary">
-                <Link href="/releases">Read v0.2.0 release notes</Link>
+                <Link href="/releases">Read v0.3.1 release notes</Link>
               </Button>
             </div>
           </Card>
