@@ -39,9 +39,6 @@ export default function QuickstartPage() {
                 <code>{`npm i @decisiongraph/core @decisiongraph/cli`}</code>
               </pre>
             </div>
-            <p className="mt-2 text-xs text-[color:var(--color-ink-subtle)]">
-              Note: <code>@decisiongraph/cli</code> will be published shortly.
-            </p>
           </Card>
         </section>
 

@@ -20,8 +20,7 @@ export default function Page() {
           </div>
 
           <h1 className="mt-6 text-4xl font-semibold leading-tight">
-            Deterministic kernel for recording, traversing, and replaying human
-            decisions.
+            Deterministic Decision Kernel for Replayable Human Judgment
           </h1>
 
           <p className="mt-4 max-w-2xl text-[color:var(--color-ink-subtle)]">

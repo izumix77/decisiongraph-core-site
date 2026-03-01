@@ -9,13 +9,28 @@ const brandSerif = localFont({
 });
 
 export const metadata = {
-  title: "DecisionGraph Core",
+  title:
+    "DecisionGraph Core – Deterministic Decision Kernel for Replayable Judgment Systems",
   description:
-    "A deterministic kernel for recording, traversing, and replaying human decisions.",
+    "DecisionGraph Core is a deterministic decision kernel for recording, traversing, and replaying human decisions as append-only graph structures. Designed for auditability, replayability, and constitutional integrity.",
+  keywords: [
+    "deterministic decision kernel",
+    "decision graph infrastructure",
+    "append-only decision log",
+    "replayable decision history",
+    "auditable decision system",
+    "constitutional graph model",
+  ],
   openGraph: {
+    title: "DecisionGraph Core",
+    description:
+      "Deterministic decision kernel for replayable, immutable decision graphs.",
+    url: "https://izumix77.github.io/decisiongraph-core-site/",
+    siteName: "DecisionGraph Core",
+    type: "website",
     images: [
       {
-        url: "/og.png", // 静的フォールバック
+        url: "/og.png",
         width: 1200,
         height: 630,
       },
