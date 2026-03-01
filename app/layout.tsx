@@ -21,6 +21,14 @@ export const metadata = {
     "auditable decision system",
     "constitutional graph model",
   ],
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+
+  manifest: "/manifest.json",
+
   openGraph: {
     title: "DecisionGraph Core",
     description:

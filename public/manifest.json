@@ -1,0 +1,22 @@
+{
+  "name": "DecisionGraph Core",
+  "short_name": "DecisionGraph",
+  "description": "Deterministic decision kernel for replayable and auditable judgment systems.",
+  "start_url": "/decisiongraph-core-site/",
+  "scope": "/decisiongraph-core-site/",
+  "display": "browser",
+  "theme_color": "#f8fafc",
+  "background_color": "#f8fafc",
+  "icons": [
+    {
+      "src": "/decisiongraph-core-site/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/decisiongraph-core-site/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
