@@ -22,6 +22,7 @@ export const metadata = {
     "constitutional graph model",
   ],
 
+<<<<<<< HEAD
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-icon.png",
@@ -29,6 +30,8 @@ export const metadata = {
 
   manifest: "/manifest.json",
 
+=======
+>>>>>>> 810084c (Simplify favicon handling)
   openGraph: {
     title: "DecisionGraph Core",
     description:
