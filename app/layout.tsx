@@ -1,5 +1,7 @@
 ﻿import "./globals.css";
 import localFont from "next/font/local";
+import { TopNav } from "./_components/TopNav";
+import { Footer } from "./_components/Footer";
 
 const brandSerif = localFont({
   src: "../public/fonts/PTSerif-Regular.ttf",
@@ -22,16 +24,6 @@ export const metadata = {
     "constitutional graph model",
   ],
 
-<<<<<<< HEAD
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-icon.png",
-  },
-
-  manifest: "/manifest.json",
-
-=======
->>>>>>> 810084c (Simplify favicon handling)
   openGraph: {
     title: "DecisionGraph Core",
     description:
@@ -59,7 +51,14 @@ export default function RootLayout({
       <body
         className={`${brandSerif.variable} bg-[var(--color-paper)] text-[var(--color-ink)]`}
       >
-        {children}
+        {/* Global Navigation */}
+        <TopNav />
+
+        {/* Page Content */}
+        <main className="min-h-screen">{children}</main>
+
+        {/* Global Footer */}
+        <Footer />
       </body>
     </html>
   );
