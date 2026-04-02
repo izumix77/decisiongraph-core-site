@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { CiValidationCard } from "./_components/CiValidationCard";
 import { Brand } from "@ui/Brand";
@@ -5,6 +6,22 @@ import { Button } from "@ui/Button";
 import { Card } from "@ui/Card";
 
 import { getLatestRelease, getReleaseSummary } from "@/lib/releases";
+
+const ecosystem = [
+  {
+    title: "TraceOS",
+    description:
+      "Built on DecisionGraph Core — an append-only WHY engine for causal evidence, replay, and audit trails.",
+    github: "https://github.com/izumix77/traceos",
+    npm: "https://www.npmjs.com/package/@trace-os/core",
+  },
+  // Future entries:
+  // {
+  //   title: "DecisionRoom",
+  //   description: "Collaborative decision protocol and review workflow.",
+  //   github: "https://github.com/izumix77/decisionroom",
+  // },
+];
 
 export default function Page() {
   const latest = getLatestRelease();
@@ -58,7 +75,7 @@ export default function Page() {
       </section>
 
       {/* Features */}
-      <section className="mx-auto max-w-5xl px-6 pb-16 grid gap-4 md:grid-cols-3">
+      <section className="mx-auto grid max-w-5xl gap-4 px-6 pb-16 md:grid-cols-3">
         <Card title="Determinism">
           <p className="text-sm text-[color:var(--color-ink-subtle)]">
             Same input → same output. Stable ordering and replay across time.
@@ -85,18 +102,63 @@ export default function Page() {
         <CiValidationCard />
       </section>
 
-      {/* Latest Release（完全自動） */}
+      {/* Ecosystem */}
+      <section className="mx-auto max-w-5xl px-6 pb-20">
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <div>
+            <h2 className="text-xl font-semibold text-[color:var(--color-ink)]">
+              Ecosystem
+            </h2>
+            <p className="mt-1 text-sm text-[color:var(--color-ink-subtle)]">
+              Companion projects built on top of DecisionGraph Core.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {ecosystem.map((item) => (
+            <Card key={item.title} title={item.title}>
+              <p className="text-sm text-[color:var(--color-ink-subtle)]">
+                {item.description}
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                <Button variant="secondary">
+                  <a href={item.github} target="_blank" rel="noreferrer">
+                    GitHub
+                  </a>
+                </Button>
+
+                {item.npm && (
+                  <Button variant="secondary">
+                    <a href={item.npm} target="_blank" rel="noreferrer">
+                      npm
+                    </a>
+                  </Button>
+                )}
+              </div>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Latest Release */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
         <Card title="Latest release">
-          <p className="text-sm text-[color:var(--color-ink-subtle)]">
-            v{latest.version}{" "}
+          <p className="text-sm text-[color:var(--color-ink-subtle)] leading-7">
+            <span className="font-medium text-[color:var(--color-ink)]">
+              v{latest.version}
+            </span>{" "}
             {summary.split(" ").map((word, i) =>
               word === "DEPENDENCY_ON_DEPRECATED" || word === "--strict" ? (
-                <code key={i} className="text-[color:var(--color-ink)]">
-                  {word}{" "}
+                <code
+                  key={i}
+                  className="rounded bg-[color:var(--color-surface-subtle)] px-1 py-0.5 text-[color:var(--color-ink)]"
+                >
+                  {word}
                 </code>
               ) : (
-                word + " "
+                <span key={i}>{word} </span>
               ),
             )}
           </p>
