@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <ConceptPageTemplate
       category="Operational Model"
-      title="AI Native Control Plane"
+      title="AI-Native Control Plane"
       subtitle="Operationalizing the Causal Reachability Model for AI Systems"
       sectionTitle="1. Overview"
     >

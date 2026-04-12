@@ -82,18 +82,27 @@ export default function Page() {
       <p className="mt-1 text-sm text-[color:var(--color-ink-subtle)]">
         Foundational ideas and operational structures for AI-native systems.
       </p>
+
+      {/* 👇 ストーリーの固定（重要） */}
+      <p className="mt-2 text-xs text-[color:var(--color-ink-subtle)]">
+        From defining what is possible → to controlling it → to redesigning the web.
+      </p>
     </div>
   </div>
 
   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
     {/* 1. Theory: CRM */}
-    <Card title="Causal Reachability Model">
-      <p className="text-sm text-[color:var(--color-ink-subtle)]">
-        Security shouldn't rely on rules. It should rely on reachability. Define what is possible through structural paths.
+    <Card title="Causal Reachability Model (CRM)">
+      <p className="text-xs text-[color:var(--color-ink-subtle)] mb-2">
+        Theory
       </p>
+
+      <p className="text-sm text-[color:var(--color-ink-subtle)]">
+        Define what is reachable. Security emerges from structure, not rules.
+      </p>
+
       <div className="mt-4">
-        {/* asChildを削除し、LinkをButtonの中に直接配置 */}
         <Button variant="secondary">
           <Link href="/docs/concepts/causal-reachability-model">
             Read Theory
@@ -102,11 +111,16 @@ export default function Page() {
       </div>
     </Card>
 
-    {/* 2. Operations: AI Native Control Plane */}
-    <Card title="AI Native Control Plane">
-      <p className="text-sm text-[color:var(--color-ink-subtle)]">
-        Operationalize CRM across context and actions. Eliminate failures by managing what AI can structurally reach.
+    {/* 2. Operations: Control Plane */}
+    <Card title="AI-Native Control Plane">
+      <p className="text-xs text-[color:var(--color-ink-subtle)] mb-2">
+        Operations
       </p>
+
+      <p className="text-sm text-[color:var(--color-ink-subtle)]">
+        Operationalize reachability. Control what AI can see and do in real time.
+      </p>
+
       <div className="mt-4">
         <Button variant="secondary">
           <Link href="/docs/vision/ai-native-control-plane">
@@ -116,11 +130,16 @@ export default function Page() {
       </div>
     </Card>
 
-    {/* 3. Vision: Agentic Semantic Web */}
+    {/* 3. Vision: Agentic Web */}
     <Card title="Agentic Semantic Web">
-      <p className="text-sm text-[color:var(--color-ink-subtle)]">
-        The evolution of the web. From location-based URLs to an AI-native internet driven by reachability over meaning.
+      <p className="text-xs text-[color:var(--color-ink-subtle)] mb-2">
+        Vision
       </p>
+
+      <p className="text-sm text-[color:var(--color-ink-subtle)]">
+        Extend reachability to the internet. From URLs to meaning-based routing.
+      </p>
+
       <div className="mt-4">
         <Button variant="secondary">
           <Link href="/docs/vision/agentic-semantic-web">
@@ -129,6 +148,7 @@ export default function Page() {
         </Button>
       </div>
     </Card>
+
   </div>
 </section>
 
