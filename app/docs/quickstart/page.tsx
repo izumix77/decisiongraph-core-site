@@ -7,7 +7,7 @@ import { Button } from "@ui/Button";
 export default function QuickstartPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <TopNav />
+
 
       <main className="flex-1">
         <section className="mx-auto max-w-5xl px-6 pt-16 pb-10">
@@ -134,7 +134,6 @@ jobs:
         </section>
       </main>
 
-      <Footer />
     </div>
   );
 }
