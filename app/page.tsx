@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { CiValidationCard } from "./_components/CiValidationCard";
 import { Brand } from "@ui/Brand";
@@ -15,12 +14,6 @@ const ecosystem = [
     github: "https://github.com/izumix77/traceos",
     npm: "https://www.npmjs.com/package/@trace-os/core",
   },
-  // Future entries:
-  // {
-  //   title: "DecisionRoom",
-  //   description: "Collaborative decision protocol and review workflow.",
-  //   github: "https://github.com/izumix77/decisionroom",
-  // },
 ];
 
 export default function Page() {
@@ -31,7 +24,12 @@ export default function Page() {
     <main className="flex flex-col">
       {/* Hero */}
       <section className="mx-auto max-w-5xl px-6 pt-20 pb-12">
-        <div className="flex items-center gap-3">
+        {/* 👇 最小の思想導線 */}
+        <p className="text-xs text-[color:var(--color-ink-subtle)]">
+          Based on the Causal Reachability Model
+        </p>
+
+        <div className="mt-2 flex items-center gap-3">
           <Brand>DecisionGraph Core</Brand>
           <span className="text-xs text-[color:var(--color-ink-subtle)]">
             v{latest.version}
@@ -44,7 +42,7 @@ export default function Page() {
 
         <p className="mt-4 max-w-2xl text-[color:var(--color-ink-subtle)]">
           Infrastructure for replayable, immutable, auditable decision graphs —
-          without inference.
+          defining what is reachable, not just what is allowed.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
@@ -74,28 +72,90 @@ export default function Page() {
         </div>
       </section>
 
+{/* 👇 Core Concepts: Theory / Operations / Vision */}
+<section className="mx-auto max-w-5xl px-6 pb-16">
+  <div className="mb-6 flex items-center justify-between gap-4">
+    <div>
+      <h2 className="text-xl font-semibold text-[color:var(--color-ink)]">
+        Core Concepts
+      </h2>
+      <p className="mt-1 text-sm text-[color:var(--color-ink-subtle)]">
+        Foundational ideas and operational structures for AI-native systems.
+      </p>
+    </div>
+  </div>
+
+  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+    {/* 1. Theory: CRM */}
+    <Card title="Causal Reachability Model">
+      <p className="text-sm text-[color:var(--color-ink-subtle)]">
+        Security shouldn't rely on rules. It should rely on reachability. Define what is possible through structural paths.
+      </p>
+      <div className="mt-4">
+        {/* asChildを削除し、LinkをButtonの中に直接配置 */}
+        <Button variant="secondary">
+          <Link href="/docs/concepts/causal-reachability-model">
+            Read Theory
+          </Link>
+        </Button>
+      </div>
+    </Card>
+
+    {/* 2. Operations: AI Native Control Plane */}
+    <Card title="AI Native Control Plane">
+      <p className="text-sm text-[color:var(--color-ink-subtle)]">
+        Operationalize CRM across context and actions. Eliminate failures by managing what AI can structurally reach.
+      </p>
+      <div className="mt-4">
+        <Button variant="secondary">
+          <Link href="/docs/vision/ai-native-control-plane">
+            View Operations
+          </Link>
+        </Button>
+      </div>
+    </Card>
+
+    {/* 3. Vision: Agentic Semantic Web */}
+    <Card title="Agentic Semantic Web">
+      <p className="text-sm text-[color:var(--color-ink-subtle)]">
+        The evolution of the web. From location-based URLs to an AI-native internet driven by reachability over meaning.
+      </p>
+      <div className="mt-4">
+        <Button variant="secondary">
+          <Link href="/docs/vision/agentic-semantic-web">
+            Read Whitepaper
+          </Link>
+        </Button>
+      </div>
+    </Card>
+  </div>
+</section>
+
       {/* Features */}
-      <section className="mx-auto grid max-w-5xl gap-4 px-6 pb-16 md:grid-cols-3">
-        <Card title="Determinism">
-          <p className="text-sm text-[color:var(--color-ink-subtle)]">
-            Same input → same output. Stable ordering and replay across time.
-          </p>
-        </Card>
+<section className="mx-auto max-w-5xl px-6 pb-16">
+  <div className="grid gap-4 md:grid-cols-3">
+    <Card title="Determinism">
+      <p className="text-sm text-[color:var(--color-ink-subtle)]">
+        Same input → same output. Stable ordering and replay across time.
+      </p>
+    </Card>
 
-        <Card title="Immutability">
-          <p className="text-sm text-[color:var(--color-ink-subtle)]">
-            After commit, the graph is append-only. Changes are expressed via
-            supersession.
-          </p>
-        </Card>
+    <Card title="Immutability">
+      <p className="text-sm text-[color:var(--color-ink-subtle)]">
+        After commit, the graph is append-only. Changes are expressed via
+        supersession.
+      </p>
+    </Card>
 
-        <Card title="Replay">
-          <p className="text-sm text-[color:var(--color-ink-subtle)]">
-            Reconstruct graph state as-of a boundary (commitId / timestamp)
-            deterministically.
-          </p>
-        </Card>
-      </section>
+    <Card title="Replay">
+      <p className="text-sm text-[color:var(--color-ink-subtle)]">
+        Reconstruct graph state as-of a boundary (commitId / timestamp)
+        deterministically.
+      </p>
+    </Card>
+  </div>
+</section>
 
       {/* CI Validation */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
