@@ -66,7 +66,18 @@ export default function Page() {
       <h2 className="pt-6 text-lg font-semibold text-[color:var(--color-ink)]">
         3. Core Model
       </h2>
+    <div className="mt-4 rounded-xl border border-[color:var(--color-border)] bg-white/70 p-4">
+  <pre className="overflow-x-auto text-xs leading-6">
+{`G = (V, E, Φ)
 
+R(s, τ) = { t ∈ V | s ⇝ t is valid at commit τ }`}
+  </pre>
+</div>
+
+<p>
+  Here, <code>V</code> represents immutable decision nodes,
+  <code>E</code> directed causal edges, and <code>Φ</code> semantic relations.
+</p>
       <p>
         A state is reachable if and only if there exists a valid causal path to
         it, where all constraints along the path are satisfied.
@@ -234,7 +245,19 @@ Execution Layer
       <p>
         They are not free to act beyond the graph.
       </p>
+    <div className="rounded-xl border border-[color:var(--color-border)] bg-white/70 p-4">
+  <pre className="overflow-x-auto text-xs leading-6">
+{`Active(V) = {
+  v ∈ V |
+  ¬∃ v' ∈ V, v →supersedes v'
+}`}
+  </pre>
+</div>
 
+<p>
+  Only active nodes participate in valid traversal.
+  Superseded nodes remain immutable but are structurally shadowed.
+</p>
       <h2 className="pt-6 text-lg font-semibold text-[color:var(--color-ink)]">
         8. Implementation Stack
       </h2>

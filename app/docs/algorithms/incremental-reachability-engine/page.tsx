@@ -323,7 +323,16 @@ dirty(node)`}
       <p>Only dirty regions are re-evaluated.</p>
 
       <p>This dramatically reduces recomputation cost.</p>
+<div className="rounded-xl border border-[color:var(--color-border)] bg-white/70 p-4">
+  <pre className="overflow-x-auto text-xs leading-6">
+{`R_new(s) =
+  R_old(s) ∪ ΔR(ΔG, s)`}
+  </pre>
+</div>
 
+<p>
+  Only the affected subgraph is recomputed.
+</p>
       <h2 className="pt-6 text-lg font-semibold text-[color:var(--color-ink)]">
         10. Computational Complexity
       </h2>

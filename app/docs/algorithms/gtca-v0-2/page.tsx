@@ -189,7 +189,18 @@ export default function Page() {
       <pre className="overflow-x-auto text-xs leading-6">
 {`visited_key = (node, path_signature, context_snapshot, depth)`}
       </pre>
+<div className="rounded-xl border border-[color:var(--color-border)] bg-white/70 p-4">
+  <pre className="overflow-x-auto text-xs leading-6">
+{`R(k+1) =
+  R(k) ∪ {
+    v | ∃ u ∈ R(k), (u, v) ∈ E
+  }`}
+  </pre>
+</div>
 
+<p>
+  The reachable set is expanded iteratively under traversal constraints.
+</p>
       <h2 className="pt-6 text-lg font-semibold text-[color:var(--color-ink)]">
         7. Core Algorithm (v0.2)
       </h2>
