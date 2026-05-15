@@ -1,5 +1,81 @@
 [
   {
+    "version": "0.4.8",
+    "date": "2026-05-15",
+    "sections": [
+      {
+        "title": "CI",
+        "items": [
+          {
+            "text": "Upgraded `actions/checkout` and `actions/setup-node` to v5 across all workflows"
+          },
+          {
+            "text": "Upgraded `pnpm/action-setup` to v5 across all workflows"
+          },
+          {
+            "text": "Added `pnpm/action-setup` step to `sync-releases.yml` (was missing; caused pnpm not found error after setup-node@v5 auto-detects packageManager field)"
+          },
+          {
+            "text": "Added `pnpm -r test` step to `ci.yml` (tests were never run in CI previously)"
+          },
+          {
+            "text": "Removed `|| true` from `pnpm audit` in `security-audit.yml`"
+          },
+          {
+            "text": "Updated Node.js from 20 to 22 across all workflows"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.4.7",
+    "date": "2026-05-12",
+    "sections": [
+      {
+        "title": "Fixed",
+        "items": [
+          {
+            "text": "`packages/io-json/package.json`, `packages/schema/package.json` — added missing `\"test\"` script; both packages' test files existed on disk but were never executed by turbo"
+          },
+          {
+            "text": "`packages/io-json/test/io.test.ts` — updated stale v0.2 fixture to v0.4 (`version: \"0.2\"` → `\"0.4\"`); test had been silently skipped since the v0.2 → v0.4 wire-format migration"
+          }
+        ]
+      },
+      {
+        "title": "Changed",
+        "items": [
+          {
+            "text": "`.gitignore` — added `.claude/` entry"
+          }
+        ]
+      },
+      {
+        "title": "Tests",
+        "items": [
+          {
+            "text": "**34 passed** (was 32 — io-json and schema test suites now wired into turbo)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.4.6",
+    "date": "2026-04-02",
+    "sections": [
+      {
+        "title": "Fixed",
+        "items": [
+          {
+            "text": "`@decisiongraph/cli`: wrap `JSON.parse` in try/catch in `validate`, `lint`, `replay`, `diff` commands — malformed JSON input no longer exposes raw stack traces; returns user-friendly error message with file path"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.4.5",
     "date": "2026-03-20",
     "sections": [
