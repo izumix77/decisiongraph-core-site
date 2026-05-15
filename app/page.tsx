@@ -23,7 +23,7 @@ export default function Page() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <section className="mx-auto max-w-5xl px-6 pt-20 pb-12">
+      <section className="mx-auto w-full max-w-5xl px-6 pt-20 pb-12">
         {/* 👇 最小の思想導線 */}
         <p className="text-xs text-[color:var(--color-ink-subtle)]">
           Based on the Causal Reachability Model
@@ -73,7 +73,7 @@ export default function Page() {
       </section>
 
 {/* 👇 Core Concepts: Theory / Operations / Vision */}
-<section className="mx-auto max-w-5xl px-6 pb-16">
+<section className="mx-auto w-full max-w-5xl px-6 pb-16">
   <div className="mb-6 flex items-center justify-between gap-4">
     <div>
       <h2 className="text-xl font-semibold text-[color:var(--color-ink)]">
@@ -200,7 +200,7 @@ export default function Page() {
 </section>
 
       {/* Features */}
-<section className="mx-auto max-w-5xl px-6 pb-16">
+<section className="mx-auto w-full max-w-5xl px-6 pb-16">
   <div className="grid gap-4 md:grid-cols-3">
     <Card title="Determinism">
       <p className="text-sm text-[color:var(--color-ink-subtle)]">
@@ -225,12 +225,12 @@ export default function Page() {
 </section>
 
       {/* CI Validation */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
+      <section className="mx-auto w-full max-w-5xl px-6 pb-20">
         <CiValidationCard />
       </section>
 
       {/* Ecosystem */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
+      <section className="mx-auto w-full max-w-5xl px-6 pb-20">
         <div className="mb-6 flex items-center justify-between gap-4">
           <div>
             <h2 className="text-xl font-semibold text-[color:var(--color-ink)]">
@@ -242,7 +242,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {ecosystem.map((item) => (
             <Card key={item.title} title={item.title}>
               <p className="text-sm text-[color:var(--color-ink-subtle)]">
@@ -270,7 +270,7 @@ export default function Page() {
       </section>
 
       {/* Latest Release */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
+      <section className="mx-auto w-full max-w-5xl px-6 pb-20">
         <Card title="Latest release">
           <p className="text-sm text-[color:var(--color-ink-subtle)] leading-7">
             <span className="font-medium text-[color:var(--color-ink)]">
