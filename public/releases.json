@@ -1,5 +1,34 @@
 [
   {
+    "version": "0.4.8",
+    "date": "2026-05-15",
+    "sections": [
+      {
+        "title": "CI",
+        "items": [
+          {
+            "text": "Upgraded `actions/checkout` and `actions/setup-node` to v5 across all workflows"
+          },
+          {
+            "text": "Upgraded `pnpm/action-setup` to v5 across all workflows"
+          },
+          {
+            "text": "Added `pnpm/action-setup` step to `sync-releases.yml` (was missing; caused pnpm not found error after setup-node@v5 auto-detects packageManager field)"
+          },
+          {
+            "text": "Added `pnpm -r test` step to `ci.yml` (tests were never run in CI previously)"
+          },
+          {
+            "text": "Removed `|| true` from `pnpm audit` in `security-audit.yml`"
+          },
+          {
+            "text": "Updated Node.js from 20 to 22 across all workflows"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.4.7",
     "date": "2026-05-12",
     "sections": [
